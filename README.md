@@ -24,3 +24,4 @@ run the server
 ```
 python manage.py runserver
 ```
+![demo](Small Resturants - Google Chrome 2023-07-19 13-41-36.gif)
