@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block title %}
+Small Resturants
+{% endblock %}
+{% block body %}
+<div class="page_list">
+{%if data%}
+{%for i in data%}
+<div class="lt_item">
+    <div class="item_details">
+        <div class="menuitem">
+            {{i.Item}}
+            {%if i.Item_det != None%}
+                <div class="item_desc">
+                    [{{i.Item_det}}]
+                </div>
+            {%endif%}
+        </div>
+        <div class="price_item">
+            @ Rs.{{i.Price}}
+        </div>
+    </div>
+    <div class="resturant_det">
+        <div class="res_name">{{i.Resturant__Resturant_Name}}</div>
+        <div class="rating">
+            {{i.Resturant__Rating}} 
+            <span class="votes">({{i.Resturant__No_of_votes}})</span>
+        </div>        
+    </div>
+    <div class="btn_item">
+        Buy Now!
+    </div>
+</div>
+<br>
+{%endfor%}
+{%if last_page == 0%}
+<div class="next">
+<hr class="seperator">
+<form class="search_place" action='.' method='POST'>{% csrf_token %}
+    <input type="text"  name="Search_return" placeholder="Search..." value="{{Query}}" hidden>
+    <input type="text"  name="Page" value="{{Page}}" hidden>
+    <button id="Next_page" type="submit">Next Page</button>
+</form>
+</div>
+{%endif%}
+{%endif%}
+</div>
+{% endblock %}
+{% block index_style %}
+<style>
+    #Next_page{
+        width: max-content;
+        height: max-content;
+        background-color: rgba(240, 248, 255, 0); 
+        border: none;
+        color: beige;
+        padding-bottom: 5vh;
+    }
+    .seperator{
+        height: 0;
+        border: 0.5vh solid rgba(0, 0, 0, 0.319);
+        border-left: 5vw solid transparent;
+        border-right: 5vw solid transparent;
+        margin-bottom: 1vh;
+    }
+    .page_list{
+        display: flex;
+        flex-direction: column;
+        padding-top: 5vh;
+        align-content: center;
+        /* background-color: rgba(254, 255, 255, 0.719) */
+    }
+    .lt_item{
+        display:flex;
+        flex-direction: row;
+        align-self: center;
+        justify-content: space-between;
+        width: 75vw;
+        height: max-content;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        padding-left: 5vw;
+        padding-right: 3vw;
+        background-color: #1a1810d0;
+        border-radius: 1vw;
+    }
+    .item_details{
+        align-content: space-between;
+        width: 45vw;
+    }
+    .menuitem{
+        display: flex;
+        flex-direction: row;
+        font-size: 4vh;
+        font-weight: bolder;
+    }
+    .price_item{
+        font-size: 3vh;
+        font-weight: bolder;
+        width: 45vw;
+    }
+    .item_desc{
+        align-self: center;
+        font-size: 2.5vh;
+        font-weight: normal;
+        padding-left: 1vw;
+    }
+    .resturant_det{
+        /* align-self: flex-end; */
+        font-size: 2.5vh;
+        /* align-content: left; */
+        width: 15vw;
+        /* max-width: max-content; */
+        /* background-color: blue; */
+    }
+    .btn_item{
+        align-self: center;
+        width: 7vw;
+        background-color:#3B3C36;
+        padding: 1vh;
+        border-radius: .5vw;
+    }
+</style>
+{% endblock %}
