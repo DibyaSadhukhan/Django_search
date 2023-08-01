@@ -25,7 +25,7 @@ run the server
 python manage.py runserver
 ```
 click here to see demo 
-https://github.com/DibyaSadhukhan/Django_search/blob/d9752138b1fc93aced787e82aa2dbf7863842017/Small%20Resturants%20-%20Google%20Chrome%202023-07-19%2013-41-36.gif
+https://github.com/DibyaSadhukhan/Django_search/blob/bd87886c3e25475edfeb7633fa23da5fbea09bef/Small%20Resturants%20-%20Google%20Chrome%202023-08-01%2011-54-52.gif
 ![demo](https://github.com/DibyaSadhukhan/Django_search/blob/d9752138b1fc93aced787e82aa2dbf7863842017/Small%20Resturants%20-%20Google%20Chrome%202023-07-19%2013-41-36.gif)
 Updated:
 ![demo](https://github.com/DibyaSadhukhan/Django_search/blob/bd87886c3e25475edfeb7633fa23da5fbea09bef/Small%20Resturants%20-%20Google%20Chrome%202023-08-01%2011-54-52.gif)
