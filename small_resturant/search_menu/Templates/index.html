@@ -45,6 +45,15 @@ Small Resturants
 {%endif%}
 {%endif%}
 </div>
+<div class="history">
+    Last 5 Searches 
+    <br>
+    {%if history%}
+    {%for i in history%}
+        {{i.Search_item}}  
+    {%endfor%}
+    {%endif%}
+</div>
 {% endblock %}
 {% block index_style %}
 <style>

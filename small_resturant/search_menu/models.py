@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class resturant_details(models.Model):
     ID=models.IntegerField(primary_key=True)
@@ -31,5 +31,8 @@ class menu_items(models.Model):
     def __str__(self):
         return self.Item_name
 
-
+class search_history(models.Model):
+    ID= models.BigAutoField(primary_key=True)
+    Search_item= models.CharField(max_length=255,default=None, blank=True, null=True)
+    user_id=models.ForeignKey(User,on_delete=models.CASCADE,related_name='User')
 

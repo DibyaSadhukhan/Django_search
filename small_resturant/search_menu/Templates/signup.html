@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+Small Resturants
+{% endblock %}
+{% block body %}
+{{Msg}}
+<form class="search_place" action='/signup' method='POST'>{% csrf_token %}
+    <input id="" type="text"  name="User_name" placeholder="User_name" value="" required>
+    <input id="" type="text"  name="Email" placeholder="Email" value="" required>
+    <input id="" type="password"  name="Password" placeholder="Password" value="" required>
+    <input id="" type="password"  name="Password2" placeholder="Confirm Password" value="" required>
+    <input type="text"  name="user_id" value="0" hidden>
+    <button id="Btn" type="submit">Search</button>
+</form>
+{% endblock %}
